@@ -23,10 +23,12 @@
         <td class="card-text"><strong>Description: </strong><%= diary.description %></td>
         <td class="card-text blockquote"><strong>Importance: </strong><%= diary.importance %></td>
         <td class="card-footer text-muted"<strong>Date: </strong><%= diary.date %></td>
-        <td class="btn btn-sm btn-primary" ><%= link_to 'Show', diary %></td>
-        <td class="btn btn-sm btn-success" ><%= link_to 'Edit', edit_diary_path(diary) %></td>
-        <td class="btn btn-sm btn-danger" > <span class="sr-only">Danger: This action is not reversible </span>
+        <% if user_signed_in? %>
+          <td class="btn btn-sm btn-success" ><%= link_to 'Edit', edit_diary_path(diary) %></td>
+          <td class="btn btn-sm btn-danger" > <span class="sr-only">Danger: This action is not reversible </span>
         <%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>  
+        <td class="btn btn-sm btn-primary" ><%= link_to 'Show', diary %></td>
         </div>
       </tr>
     <% end %>
@@ -34,5 +36,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Diary', new_diary_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Diary', new_diary_path %>
+<% end %>  
