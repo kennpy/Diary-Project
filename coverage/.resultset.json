@@ -1,6 +1,39 @@
 {
   "RSpec": {
     "coverage": {
+      "/root/cs3300-project/app/models/user.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/root/cs3300-project/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/root/cs3300-project/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/root/cs3300-project/app/helpers/diaries_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/root/cs3300-project/app/controllers/diaries_controller.rb": {
         "lines": [
           1,
@@ -84,6 +117,12 @@
       "/root/cs3300-project/app/models/diary.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -101,22 +140,6 @@
         "lines": [
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/root/cs3300-project/app/helpers/application_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/root/cs3300-project/app/helpers/diaries_helper.rb": {
-        "lines": [
           0,
           0
         ],
@@ -145,29 +168,8 @@
         ],
         "branches": {
         }
-      },
-      "/root/cs3300-project/app/models/application_record.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/root/cs3300-project/app/models/user.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1682726295
+    "timestamp": 1682730077
   }
 }

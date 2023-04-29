@@ -29,6 +29,13 @@ RSpec.describe DiariesController, :type => :controller do
            end
        end
 
+       context "GET #edit" do
+           let!(:project) { Diary.update(tite: "Test title", description: "Test description") }
+           it "returns a success response" do
+               expect(response).to have_http_status(:ok)
+           end
+       end
+
        context "GET #delete" do
            let!(:project) { Diary.delete(tite: "Test title", description: "Test description") }
            it "returns a success response" do

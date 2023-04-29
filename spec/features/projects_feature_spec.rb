@@ -1,7 +1,7 @@
 require "rails_helper"
 
 
-RSpec.feature "Projects", type: :feature do
+RSpec.feature "Diaries", type: :feature do
     context "Update project" do
       let(:project) { Diary.create(tite: "Test title", description: "Test content") }
       before(:each) do

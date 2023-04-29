@@ -27,14 +27,24 @@ describe "Project Attribute Requirements on Create", :type => :model do
         project = Diary.new(summary: "Some description content goes here")
         expect(project.save).to eq(false)
       end
+
+      it "should not be able to save project when summary missing" do
+        project = Diary.new(summary: nil)
+        expect(project.save).to eq(false)
+      end
+
+      it "should not be able to save project when date missing" do
+        project = Diary.new(date: nil)
+        expect(project.save).to eq(false)
+      end
+
   end
 end
-
 
 describe "Project Attribute Requirements on Edit", :type => :model do
   context "Edit project" do  
     before (:each) do
-      @project = Diary.create(tite: "Title", description: "Content of the description", summary: "summary description")
+      @project = Diary.create(tite: "Title", description: "Content of the description", summary: "summary description", importance: "3", date: "10/02/2002")
       end
     it "ensures the title is present when editing project" do
       @project.update(:tite => "New Title")
@@ -42,8 +52,23 @@ describe "Project Attribute Requirements on Edit", :type => :model do
     end
 
     it "ensures the description is present when editing project" do
-        @project.update(:description => "New Description")
-        expect(@project.description == "New Description")
-      end
+      @project.update(:description => "New Description")
+      expect(@project.description == "New Description")
+    end
+
+    it "ensures the summary is present when editing project" do
+      @project.update(:summary => "New summary")
+      expect(@project.summary == "New summary")
+    end
+
+    it "ensures the date is present when editing project" do
+      @project.update(:date => "New date")
+      expect(@project.date == "New date")
+    end
+
+    it "ensures the importance is present when editing project" do
+      @project.update(:importance => "1")
+      expect(@project.importance == "1 ")
+    end
   end
 end
