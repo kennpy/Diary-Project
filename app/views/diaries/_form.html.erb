@@ -36,6 +36,12 @@
     <%= form.date_select :date %>
   </div>
 
+  <div class="field">
+  <%= form.label :image %>
+  <%= form.file_field :image, class: "form-control" %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

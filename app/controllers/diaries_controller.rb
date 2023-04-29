@@ -3,7 +3,24 @@ class DiariesController < ApplicationController
   before_action :authenticate_user!, only: %i[ new edit create update destroy]
   # GET /diaries or /diaries.json
   def index
+    diary_pms = params.permit(:tite, :summary, :description, :importance, :date, :image)
+
     @diaries = Diary.all
+    #@diaries = Diary.order(:importance,  :desc)
+    #@diaries = Diary.order(params[:sort], :desc)
+
+    if params[:search_by_summary] && params[:search_by_summary] != ""
+      puts :search_by_summary
+      #@diaries = @diaries.where("summary like ?", "%# {params[:search_by_tite]}%")
+      @diaries = @diaries.where("summary = ?", params[:search_by_summary])
+      
+    end
+
+
+  end
+
+  def search 
+  
   end
 
   # GET /diaries/1 or /diaries/1.json

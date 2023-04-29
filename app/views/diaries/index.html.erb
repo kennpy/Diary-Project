@@ -5,7 +5,17 @@
 .table {
    border: 5px solid red;
 }
+
 </style>
+
+
+<button onclick="link_to 'Importance', :sort => 'importance'">Sort table</button>
+
+<%= form_tag "/diaries", method: "GET" do %>
+  <%= label_tag :search_by_summary %>
+  <%= text_field_tag :search_by_summary, params[:search_by_summary] %>
+  <%= submit_tag "Search" %>
+<% end %>
 
 <table class="table container-sm">
   <thead>
@@ -16,6 +26,7 @@
 
   <tbody>
     <% @diaries.each do |diary| %>
+
       <tr class="card m-5 container-sm">
         <div class="card-body">
         <td class="card-title h2"><strong>Title: </strong><%= diary.tite %></td>
@@ -39,3 +50,4 @@
 <% if user_signed_in? %>
   <%= link_to 'New Diary', new_diary_path %>
 <% end %>  
+
